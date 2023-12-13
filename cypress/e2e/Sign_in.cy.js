@@ -67,7 +67,7 @@ describe('TestSuites', function () {
         cy.get('.MuiButton-root').click() 
         cy.get('.MuiTypography-subtitle1 > .MuiTypography-root').click()
         cy.get('.MuiList-root > [tabindex="0"]').click()
-        // cy.get(':nth-child(3) > .css-fv3lde').should('be.visible').click() // Logout functionality
+        cy.get(':nth-child(3) > .css-fv3lde').should('be.visible').click() // Logout functionality
         
         
        });
