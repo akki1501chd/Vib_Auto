@@ -129,6 +129,7 @@ describe('TestSuites ', function () {
       cy.wait(10000);
       cy.get(':nth-child(1) > .fc-event > .calender-event').click() // Schedule Appointment
       cy.get('.view-details > .MuiGrid-container > .MuiGrid-grid-md-2 > .MuiBox-root > :nth-child(1)').click() //Click on Edit Action
+      cy.get('.MuiButton-outlined').click() // Click On Cancel Button
     })
       
    
