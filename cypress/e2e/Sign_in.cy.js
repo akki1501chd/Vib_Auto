@@ -17,7 +17,7 @@ describe('TestSuites', function () {
        });
     
 
-       it('Registration', function(){
+       it.only('Registration', function(){
         cy.visit("https://vibras.com/"); 
         cy.get('.MuiTypography-subtitle1 > a').click();
         cy.get('.MuiGrid-root > .MuiButtonBase-root').click() //Click on Register Button without filling the details
@@ -41,7 +41,9 @@ describe('TestSuites', function () {
         //cy.get('#\:re\:-option-1')
        
         //cy.get('.MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
-        cy.get('.MuiGrid-root > .MuiButtonBase-root').should('be.enabled').should('be.visible').click(); // Perform click action on register button
+        cy.get('.MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
+        cy.get('#\:re\:-option-6').click()
+        //cy.get('.MuiGrid-root > .MuiButtonBase-root').should('be.enabled').should('be.visible').click(); // Perform click action on register button
         
        });
       //const runs = 10;
@@ -60,7 +62,7 @@ describe('TestSuites', function () {
         
        });
 
-      it.only('Logout', function(){
+      it('Logout', function(){
         cy.visit("https://vibras.com/"); 
         cy.get('#email').type('aakash@webspero.com'); 
         cy.get('#password').type('987654321');
