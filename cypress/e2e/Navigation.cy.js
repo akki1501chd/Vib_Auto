@@ -17,7 +17,7 @@ describe('TestSuites ', function () {
     //     cy.visit(this.data.url)
     //    })
 
-    it('Task', function(){
+    it('Navigations', function(){
         cy.visit("https://vibras.com/"); // visit URL 
         cy.get('#email').type('webt580@gmail.com'); // Valid credentials 
         cy.get('#password').type('987654321');
@@ -34,7 +34,8 @@ describe('TestSuites ', function () {
         cy.get(':nth-child(9) > .MuiButtonBase-root').click()
         cy.get(':nth-child(10) > .MuiButtonBase-root').click()  
         cy.get(':nth-child(11) > .MuiButtonBase-root').click()  
-        cy.get('.bottom-setting > .MuiButtonBase-root').click()
+        cy.get(':nth-child(12) > .MuiButtonBase-root').click()
+        //cy.get('.bottom-setting > .MuiButtonBase-root').click()
         
 
 
