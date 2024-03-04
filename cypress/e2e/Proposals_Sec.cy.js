@@ -37,7 +37,7 @@ describe('TestSuites ', function () {
       cy.get('#contact-option-4').click()// Drop down
       cy.get('.css-69i1ev > .MuiBox-root > .MuiButton-contained').click() //Submit button
     });
-    it.only('Edit Proposals Title Form page', function () {
+    it('Edit Proposals Title Form page', function () {
       cy.visit("https://vibras.com/");
       cy.get('#email').type('aakash@webspero.com'); 
       cy.get('#password').type('987654321');
@@ -47,7 +47,10 @@ describe('TestSuites ', function () {
       // cy.get(':nth-child(10) > .MuiButtonBase-root').click()
       cy.get(':nth-child(1) > .proposal-card > .css-k008qs > .pro_right_cont_cls_des').click() //Click on the proposal
       cy.get('[data-rbd-draggable-id="5f6cb201-0b60-4c48-8b2a-a526558a5b22"] > .css-35o7ay').click() //Open Title form
-      
+      cy.get('#note').click().type('This is your Automation')
+      cy.get('.sbmt_btn_contin > .MuiButtonBase-root').should('be.visible').should('be.enabled').click()
+      cy.get('.remove_notes_fetech > .MuiButtonBase-root').click() //Delete Note
+      cy.get('#name').clear().type('Auto Testing')
     })
   
   
@@ -56,13 +59,13 @@ describe('TestSuites ', function () {
       cy.get('#email').type('aakash@webspero.com');
       cy.get('#password').type('987654321');
       cy.get('.MuiButton-root').click();
-      cy.wait(10000); W
+      cy.wait(10000); 
       cy.get(':nth-child(10) > .MuiButtonBase-root').click();
       // cy.wait(10000);cy.Wget(':nthcy.wai///<reference types = "cypress"/);
       cy.get(':nth-child(12) > .MuiButtonBase-root').click();
       cy.wait(10000);
-      cy.get('.proposal-card > .css-k008qs > .pro_right_cont_cls_des > :nth-child(2)').click()
-      cy.get('[data-rbd-draggable-id="19601be0-86bc-4a35-be58-27614f5c360c"] > .css-35o7ay').click() //Click on Introduction form
+      cy.get(':nth-child(1) > .proposal-card > .css-k008qs > .pro_right_cont_cls_des').click()
+      cy.get('[data-rbd-draggable-id="212d9566-9212-4f5d-b6d1-6cf80bee1777"] > .css-35o7ay').click() //Click on Introduction form
   
       // cy.title().should('eq','vibras'); // Verify the title
       cy.get('.tile_ed_ppossl > .MuiButtonBase-root > img').should('be.visible').click() //.type('Intro...')
@@ -72,7 +75,7 @@ describe('TestSuites ', function () {
       cy.get('#customized-dialog-title > .MuiButtonBase-root').click()
   
     })
-    it('Edit Proposals Quote Details Form page', function () {
+    it.only('Edit Proposals Quote Details Form page', function () {
       cy.visit("https://lasvibras.io/");
       cy.get('#email').type('aakash@webspero.com');
       cy.get('#password').type('987654321');
@@ -80,21 +83,29 @@ describe('TestSuites ', function () {
       cy.wait(10000);
       cy.get(':nth-child(10) > .MuiButtonBase-root').click();
       // cy.wait(10000);
-      cy.get(':nth-child(1) > .proposal-card').click();
-      cy.get('[data-rbd-draggable-id="f129c40f-7fdc-4484-b191-e88e8a37d8be"] > .css-35o7ay').click(); // Quote Details
-      cy.get('#sectionTitle').should('be.visible').should('be.enabled').click().clear().type('Furniture'); //Section title
-      cy.get('.add_nw_itm_frm > :nth-child(1)').click() // Click on Add item button
-      cy.get('.MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click() //Arrow drop down
+      cy.get(':nth-child(12) > .MuiButtonBase-root').click();
+      cy.wait(10000);
+      cy.get(':nth-child(1) > .proposal-card > .css-k008qs > .pro_right_cont_cls_des').click(); 
+      cy.get('[data-rbd-draggable-id="3387c742-88d5-4e1b-8866-3e94659d14aa"] > .css-35o7ay').click() //Quote Details
+       // Click on Add item button
+      
       //cy.get('#\:r38\:-option-0').click()
       //cy.get('.MuiAutocomplete-endAdornment > .MuiButtonBase-root').click(); //Arrow drop down
       //cy.get('#\:r38\:-option-2').click();
-      const num1 = 5
-      const num2 = 7;
+
+      cy.get('#sectionTitle').click().clear().type('Demo_Test');
+      cy.get('.add_nw_itm_frm > :nth-child(1)').click() //Add Iteam
+      cy.get(':nth-child(3) > .line_total_bt > .css-gg4vpm > .MuiButtonBase-root').click()
+      cy.get('.MuiAutocomplete-endAdornment > .MuiButtonBase-root').click()
+     
+      // const num1 = 5
+      // const num2 = 7;
   
-      // Calculate the expected result
-      const expectedResult = num1cy.get('[aria-label="Aakash Kumar"]') * num2;
-      cy.get('#quantity').type(num1); //.should('be.visible').should('be.enabled').type('5');
-      cy.get('#price').type(num2);  //.should('be.visible').should('be.enabled').type('50');
+      // // Calculate the expected result
+      // const expectedResult = num1 * num2;
+      
+      // cy.get('#quantity').type(num1); //.should('be.visible').should('be.enabled').type('5');
+      // cy.get('#price').type(num2);  //.should('be.visible').should('be.enabled').type('50');
     })
   
     it('Edit Proposals Terms and Conditions Form page', function () {

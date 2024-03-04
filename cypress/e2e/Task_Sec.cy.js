@@ -46,7 +46,7 @@ describe('TestSuites ', function () {
       cy.get('[data-timestamp="1709145000000"]').click({ force: true });// Select Due Date
       cy.get(':nth-child(2) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click()
       cy.get('.MuiPickersDay-today').click({ force: true });
-
+      cy.get('.MuiPickersDay-today')
 
 
     });

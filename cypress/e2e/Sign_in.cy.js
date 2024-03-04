@@ -51,11 +51,15 @@ describe('TestSuites', function () {
   //for (let i = 1; i <= runs; i++) {
   //it(`Run ${i}: visit URL`, function () {
 
-  it('Valid Credentials', function () {
+  it.only('Valid Credentials', function () {
     cy.visit("https://vibras.com/"); // visit URL 
     cy.get('#email').type('aakash@webspero.com'); // Valid credentials 
     cy.get('#password').type('987654321');
     cy.get('.MuiButton-root').click()
+    cy.get('#fc-dom-1').should('contain.text', 'March 2024')
+    cy.get('#fc-dom-1').should('have.length',1)
+    
+      
     //cy.get(':nth-child(10) > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root').click()
     //cy.get(':nth-child(5) > .proposal-rejected-card > .css-k008qs > .pro_right_cont_cls_des > .css-0 > :nth-child(4) > .MuiBox-root > .send_prop').click()
 
