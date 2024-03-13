@@ -5,9 +5,9 @@ describe('TestSuites ', function () {
 
   //for (let i = 1; i <= runs; i++) {
   //it(`Run ${i}: visit URL`, function () {
-  it('Single Day Appointments', function () {
+  it.only('Single Day Appointments', function () {
     cy.visit("https://vibras.com/"); // visit URL 
-    cy.get('#email').type('aakash@webspero.com'); // Valid credentials 
+    cy.get('#email').type('webt580@gmail.com'); // Valid credentials 
     cy.get('#password').type('987654321');
     cy.get('.MuiButton-root').click()
     //cy.wait(10000);
@@ -36,7 +36,7 @@ describe('TestSuites ', function () {
     cy.get('[value="e957e195-da63-4112-890a-26b086477ad1"]').click() //Selecting attribute from the drop down
     cy.get(':nth-child(1) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click() //Callender Icon
     //cy.get('.MuiPickersArrowSwitcher-root > .MuiIconButton-edgeStart').click()
-    cy.get('[data-timestamp="1709145000000"]').click() //Select Date
+    cy.get('[data-timestamp="1711650600000"]').click() //Select Date
     cy.get(':nth-child(2) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click()  //Date Icon
     cy.get('[aria-label="Select meridiem"] > [tabindex="-1"]').click() //Select Time
     cy.get('.MuiInputBase-root > #assignedTo').click()
@@ -56,7 +56,7 @@ describe('TestSuites ', function () {
 
 
   // describe('My Test', () => {
-  it.only('Multiple Day,s Appointments', () => {
+  it('Multiple Day,s Appointments', () => {
 
     // Load the contents of the 'example.json' fixture
     cy.fixture('example.json').then((data) => {
@@ -83,21 +83,21 @@ describe('TestSuites ', function () {
       cy.get(':nth-child(1) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click() //Callender Icon
 
       //cy.get('.MuiPickersArrowSwitcher-root > .MuiIconButton-edgeStart').click()
-      cy.get('[data-timestamp="1708885800000"]').click() //Start Date Select 
+      cy.get('[data-timestamp="1711650600000"]', { timeout: 10000 }).should('exist');//.click() //Start Date Select 
       cy.get(':nth-child(2) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click()
-      cy.get('[data-timestamp="1709058600000"]').click()  // Select End Date 
-      cy.get(':nth-child(3) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click() //Time Icon
-      cy.get('[aria-label="2 hours"]').click() //Select Start Time
-      cy.get(':nth-child(4) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click()
-      cy.wait(5000);
-      cy.get('[aria-label="20 minutes"]').click()//({ multiple: true }); //Select End Time
-      //cy.get('.css-k3gutg > :nth-child(1)').click() // Time Duration(15 min)
-      cy.get('.MuiDialogActions-root > .MuiButtonBase-root').click()
-      cy.get('.MuiInputBase-root > #assignedTo').click()
-      cy.get('[data-value="55aca58e-3895-4c4d-a025-2a0723b6a5c1"]').click()
-      cy.get('.MuiAutocomplete-endAdornment').click()
-      cy.get('#contact-option-2').click()
-      cy.get('#appointmentDetails').click().type('This is your Automation...')
+      cy.get('[aria-rowindex="6"] > .MuiButtonBase-root').first().click()  // Select End Date 
+      // cy.get(':nth-child(3) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click() //Time Icon
+      // cy.get('[aria-label="2 hours"]').click() //Select Start Time
+      // cy.get(':nth-child(4) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click()
+      // cy.wait(5000);
+      // cy.get('[aria-label="20 minutes"]').click()//({ multiple: true }); //Select End Time
+      // //cy.get('.css-k3gutg > :nth-child(1)').click() // Time Duration(15 min)
+      // cy.get('.MuiDialogActions-root > .MuiButtonBase-root').click()
+      // cy.get('.MuiInputBase-root > #assignedTo').click()
+      // cy.get('[data-value="55aca58e-3895-4c4d-a025-2a0723b6a5c1"]').click()
+      // cy.get('.MuiAutocomplete-endAdornment').click()
+      // cy.get('#contact-option-2').click()
+      // cy.get('#appointmentDetails').click().type('This is your Automation...')
       //   cy.get('.MuiAutocomplete-popupIndicator').click() //Contact Drop down
 
       //   cy.get('#contact-option-6').click()

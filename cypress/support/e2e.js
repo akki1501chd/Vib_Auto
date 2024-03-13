@@ -15,6 +15,11 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+require('cypress-xpath');
+
+// before(() => {
+//     cy.log("This is your global hook");
+//     })
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

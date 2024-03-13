@@ -16,6 +16,19 @@ describe('My Test', () => {
         // Continue with your test... 
 
       });
+
+
+
     });
  });
+
+//  it('Use if fixture',()=>{
+//   cy.fixture('example.json').then(data) => {
+//     cy.log('Fixture Data:', data);
+
+//   }
+
+//  })
+
+
   
