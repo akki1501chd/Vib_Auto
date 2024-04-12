@@ -5,7 +5,7 @@ describe('TestSuites ', function () {
 
   //for (let i = 1; i <= runs; i++) {
   //it(`Run ${i}: visit URL`, function () {
-    it('Create New Proposal', function () {
+    it.only('Create New Proposal', function () {
       cy.visit("https://vibras.com/"); // visit URL 
       cy.get('#email').type('webt580@gmail.com'); // Valid credentials 
       cy.get('#password').type('987654321');

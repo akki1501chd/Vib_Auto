@@ -5,7 +5,7 @@ describe('TestSuites ', function () {
 
   //for (let i = 1; i <= runs; i++) {
   //it(`Run ${i}: visit URL`, function () {
-  it.only('Task Section', () => {
+  it('Task Section', () => {
     // Load the contents of the 'example.json' fixture
     cy.fixture('example.json').then((data) => {
       // 'data' now contains the content of the 'example.json' fixture
@@ -30,7 +30,7 @@ describe('TestSuites ', function () {
     });
   });
 
-  it('Create Task ', () => {
+  it.only('Create Task ', () => {
     cy.fixture('example.json').then((data) => {
       cy.log('Fixture Data:', data);
       // Use the fixture data in your test
@@ -43,15 +43,22 @@ describe('TestSuites ', function () {
       cy.get('#title').type(' Auto Testing')
       cy.get('#description').type('Description for automation testing')
       cy.get(':nth-child(1) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click()
-      cy.get('[data-timestamp="1709145000000"]').click({ force: true });// Select Due Date
+      cy.get('[data-timestamp="1714415400000"]').click({ force: true });// Select Due Date
       cy.get(':nth-child(2) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click()
-      cy.get('.MuiPickersDay-today').click({ force: true });
-      cy.get('.MuiPickersDay-today')
+      cy.get('[data-timestamp="1714329000000"]').click()//.click()
+      // cy.get('.MuiPickersDay-today').click({ force: true });
+      // cy.get('.MuiPickersDay-today')
+    
 
 
     });
+
   });
 });
+
+
+
+
 
 
 

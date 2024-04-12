@@ -7,7 +7,7 @@ describe('TestSuites ', function () {
   //it(`Run ${i}: visit URL`, function () {
   it('Sales Pipeline', function () {
     cy.visit("https://vibras.com/"); // visit URL 
-    cy.get('#email').type('aakash@webspero.com'); // Valid credentials 
+    cy.get('#email').type('webt580@gmail.com'); // Valid credentials 
     cy.get('#password').type('987654321');
     cy.get('.MuiButton-root').click()
     cy.get(':nth-child(2) > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root').click() //Navigate to Sales Pipeline section
@@ -24,7 +24,7 @@ describe('TestSuites ', function () {
     cy.get('#dealName').type('Vib_Deal')
     //cy.get('#dripJob > .MuiTypography-root').click()
     cy.get('.MuiInputBase-root > #stage').click() //Drop down stages
-    cy.get('[data-value="b28dc97e-dcf4-4183-979b-c82afb9cf61e"]').click()
+    cy.get('[data-value="0f219a18-1f6b-4f24-8046-20614a078216"]').click()
     cy.get('.d-flex-3 > .MuiButton-contained').should('be.visible').should('be.enabled').click() //Submit Button
     //cy.get('#composition-button').should('be.visible').should('be.enabled').click() //Click on Appointment
     //cy.get('#composition-menu').should('be.visible') 
