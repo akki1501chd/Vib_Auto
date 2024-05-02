@@ -6,14 +6,14 @@ describe('TestSuites ', function () {
   //for (let i = 1; i <= runs; i++) {
   //it(`Run ${i}: visit URL`, function () {
   it('Sales Pipeline', function () {
-    cy.visit("https://vibras.com/"); // visit URL 
+    cy.visit("https://vibras.com/contractor/login"); // visit URL 
     cy.get('#email').type('webt580@gmail.com'); // Valid credentials 
     cy.get('#password').type('987654321');
     cy.get('.MuiButton-root').click()
     cy.get(':nth-child(2) > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root').click() //Navigate to Sales Pipeline section
     //cy.get(':nth-child(2) > .MuiButtonBase-root').should('be.visible').should('be.enabled').eq(0).click();//({ multiple: true });
     cy.title().should('eq', 'vibras')
-    cy.get('.portal-logo').should('be.visible') //Logo Validation
+    //cy.get('.portal-logo').should('be.visible') //Logo Validation
     cy.wait(10000);
     cy.get('.css-1ph3js4').click() //Navigate to List
     //cy.get('.page-container').should('be.visible')

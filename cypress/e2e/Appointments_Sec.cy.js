@@ -6,11 +6,11 @@ describe('TestSuites ', function () {
   //for (let i = 1; i <= runs; i++) {
   //it(`Run ${i}: visit URL`, function () {
   it('Single Day Appointments', function () {
-    cy.visit("https://vibras.com/"); // visit URL 
+    cy.visit("https://vibras.com/contractor/login"); // visit URL 
     cy.get('#email').type('webt580@gmail.com'); // Valid credentials 
     cy.get('#password').type('987654321');
     cy.get('.MuiButton-root').click()
-    //cy.wait(10000);
+    cy.wait(10000); 
     cy.get('.MuiDrawer-root > .MuiPaper-root > .MuiList-root > :nth-child(3) > .MuiButtonBase-root').should('be.visible').click() //Navigate Appointments section
 
 
@@ -26,7 +26,7 @@ describe('TestSuites ', function () {
       cy.log(`Page reload time: ${pageReloadTime} ms`);
     });
     cy.wait(10000);
-    cy.get('.top_calendar_right-app > .MuiButton-sizeLarge').click() //Reload button
+    cy.get('.MuiButton-sizeLarge').click() //Reload button
     cy.get(':nth-child(2) > #faq-header-1 > .MuiAccordionSummary-expandIconWrapper > .MuiButtonBase-root').click().click() //Filter + icon
     cy.get(':nth-child(3) > #faq-header-1 > .MuiAccordionSummary-expandIconWrapper > .MuiButtonBase-root').click().click() //
     cy.get('.fc-next-button > .fc-icon').click() //Increment calender icon 
@@ -36,12 +36,12 @@ describe('TestSuites ', function () {
     cy.get('[value="25203da8-1aa4-411c-a3e2-bc35a45f891d"]').click() //Selecting attribute from the drop down
     cy.get(':nth-child(1) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click() //Callender Icon
     //cy.get('.MuiPickersArrowSwitcher-root > .MuiIconButton-edgeStart').click()
-    cy.get('[data-timestamp="1713983400000"]').click() //Select Date
+    cy.get('[data-timestamp="1717093800000"]').click() //Select Date
     cy.get(':nth-child(2) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click()  //Date Icon
     cy.get('[aria-label="Select meridiem"] > [tabindex="-1"]').click() //Select Time
     cy.get('.MuiInputBase-root > #assignedTo').click()
     cy.get('[data-value="db72b95c-a13a-48d4-8736-5b2d994d9aae"]').click()
-    //cy.get(':nth-child(2) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click() //Select Attribute from the drop down
+    // //cy.get(':nth-child(2) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click() //Select Attribute from the drop down
     cy.get('.css-k3gutg > :nth-child(1)').click() // Time Duration(15 min)
     cy.get('.MuiAutocomplete-popupIndicator').click() //Contact Drop down
     cy.get('#contact-option-3').click() // Select Contact from the drop down
@@ -56,7 +56,7 @@ describe('TestSuites ', function () {
 
 
   // describe('My Test', () => {
-  it.only('Multiple Day,s Appointments', () => {
+  it('Multiple Day,s Appointments', () => {
 
     // Load the contents of the 'example.json' fixture
     cy.fixture('example.json').then((data) => {
@@ -70,7 +70,7 @@ describe('TestSuites ', function () {
       // cy.get('#password').type(data.password);
       // cy.get('.MuiButton-root').click(); 
 
-      cy.visit("https://vibras.com/"); // visit URL 
+      cy.visit("https://vibras.com/contractor/login"); // visit URL 
       cy.get('#email').type('webt580@gmail.com'); // Valid credentials 
       cy.get('#password').type('987654321');
       cy.get('.MuiButton-root').click()
@@ -83,10 +83,10 @@ describe('TestSuites ', function () {
       cy.get(':nth-child(1) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click() //Callender Icon
 
       //cy.get('.MuiPickersArrowSwitcher-root > .MuiIconButton-edgeStart').click()
-      cy.get('[data-timestamp="1714156200000"]').click()
+      cy.get('[data-timestamp="1716834600000"]').click()
       //cy.get('[data-timestamp="1714156200000"]', { timeout: 10000 }).should('exist');//.click() //Start Date Select 
       cy.get(':nth-child(2) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click()
-      cy.get('[data-timestamp="1714415400000"]').first().click()  // Select End Date 
+      cy.get('[data-timestamp="1717093800000"]').first().click()  // Select End Date 
       cy.get(':nth-child(3) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click() //Time Icon
       cy.get('[aria-label="2 hours"]').click() //Select Start Time
       cy.get(':nth-child(4) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root').click()
@@ -116,9 +116,9 @@ describe('TestSuites ', function () {
 
 
 
-it('Request Appointments', function () {
-  cy.visit("https://vibras.com/");
-  cy.get('#email').type('aakash@webspero.com');
+it.skip('Request Appointments', function () {
+  cy.visit("https://vibras.com/contractor/login");
+  cy.get('#email').type('webt580@gmail.com');
   cy.get('#password').type('987654321');
   cy.get('.MuiButton-root').click()
   //cy.wait(10000);
@@ -145,14 +145,18 @@ it('Request Appointments', function () {
 
 
 it('Edit  Appointments', function () {
-  cy.visit("https://vibras.com/");
+  cy.visit("https://vibras.com/contractor/login");
   cy.get('#email').type('webt580@gmail.com');
   cy.get('#password').type('987654321');
   cy.get('.MuiButton-root').click()
   cy.wait(10000);
   cy.get('.MuiDrawer-root > .MuiPaper-root > .MuiList-root > :nth-child(3) > .MuiButtonBase-root').click()
-  cy.get(':nth-child(5) > .fc-day-thu > .fc-daygrid-day-frame > .fc-daygrid-day-events > :nth-child(1) > .fc-event > .calender-event').click() //Click on any of appointment
+  cy.wait(10000);
+  cy.get('.fc-day-fri > .fc-daygrid-day-frame > .fc-daygrid-day-events > .fc-daygrid-event-harness > .fc-event > .calender-event').click() //Click on any of appointment
   //cy.get('.view-details > .MuiGrid-container > .MuiGrid-grid-md-2 > .MuiBox-root > :nth-child(1)').click() //Edit Icon
+  cy.get('.MuiGrid-grid-md-2 > .MuiBox-root > :nth-child(1) > img').click()
+  cy.get('#appointmentDetails').click().clear().type("Hello....This is Vibras")
+  cy.get('.d-flex-3 > .MuiButton-contained').click()
 
 })
 

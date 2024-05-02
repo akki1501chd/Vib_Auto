@@ -22,11 +22,13 @@ describe('TestSuites ', function () {
       cy.wait(10000)
       cy.get(':nth-child(10) > .MuiButtonBase-root').click()  //Automation Section
       //cy.get('#faq-header-0f219a18-1f6b-4f24-8046-20614a078216').click() //Estimate Requested
+      cy.wait(10000)
       cy.get('#faq-header-7ad7a276-299e-41b5-8a5d-b7419f19d60c').click() //Recurring Job
       cy.get('#faq-content-7ad7a276-299e-41b5-8a5d-b7419f19d60c > :nth-child(1) > .css-h5fkc8 > .MuiGrid-container > .MuiGrid-root > .MuiButtonBase-root').click()
       cy.get('#name').type("Hello_Test4")
       cy.get('#isDefault').click()
       cy.get(':nth-child(5) > .MuiBox-root > .MuiButton-contained').click()
+     
     
 
       

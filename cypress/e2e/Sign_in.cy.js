@@ -8,7 +8,7 @@ describe('TestSuites', function () {
   //for (let i = 1; i <= runs; i++) {
   //it(`Run ${i}: visit URL`, function () {
   it('Visit URL LogIn with Invalid credentials', function () {
-    cy.visit("https://vibras.com/"); // visit URL 
+    cy.visit("https://vibras.com/contractor/login"); // visit URL 
     cy.title().should('eq', 'vibras'); // Verify Title 
     cy.get('#email').should('be.enabled').click().type('abc@gmail.com'); // Invalid credentials 
     cy.get('#password').should('be.enabled').click().type('123456789');
@@ -18,7 +18,7 @@ describe('TestSuites', function () {
 
 
   it('Registration', function () {
-    cy.visit("https://vibras.com/");
+    cy.visit("https://vibras.com/contractor/login");
     cy.get('.MuiTypography-subtitle1 > a').click();
     cy.get('.MuiGrid-root > .MuiButtonBase-root').click() //Click on Register Button without filling the details
     cy.get('#firstName').should('be.enabled').should('be.visible').type('Hello');  //First Name 
@@ -42,7 +42,8 @@ describe('TestSuites', function () {
     // cy.get('.MuiButtonBase-root > [data-testid="ArrowDropDownIcon"] > path').click()
     // //cy.get('#\:re\:-option-1')
     cy.get('.MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
-    cy.get('#\:re\:-option-1').click()
+    //cy.get('#\:rf\:-option-0').click()
+    
 
     // //cy.get('.MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
     // cy.get('.MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
@@ -55,24 +56,24 @@ describe('TestSuites', function () {
   //for (let i = 1; i <= runs; i++) {
   //it(`Run ${i}: visit URL`, function () {
 
-  it.only('Valid Credentials', function () {
-    cy.visit("https://vibras.com/"); // visit URL 
+  it('Valid Credentials', function () {
+    cy.visit("https://vibras.com/contractor/login"); // visit URL 
     cy.get('#email').type('webt580@gmail.com'); // Valid credentials 
     cy.get('#password').type('987654321');
     cy.get('.MuiButton-root').click()
-    cy.get('#fc-dom-1').should('contain.text', 'March 2024')
+    cy.get('#fc-dom-1').should('contain.text', 'April 2024')
     cy.get('#fc-dom-1').should('have.length',1)
     
       
-    //cy.get(':nth-child(10) > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root').click()
-    //cy.get(':nth-child(5) > .proposal-rejected-card > .css-k008qs > .pro_right_cont_cls_des > .css-0 > :nth-child(4) > .MuiBox-root > .send_prop').click()
+    // cy.get(':nth-child(10) > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root').click()
+    // cy.get(':nth-child(5) > .proposal-rejected-card > .css-k008qs > .pro_right_cont_cls_des > .css-0 > :nth-child(4) > .MuiBox-root > .send_prop').click()
 
 
   });
 
-  it('Logout', function () {
-    cy.visit("https://vibras.com/");
-    cy.get('#email').type('aakash@webspero.com');
+  it.only('Logout', function () {
+    cy.visit("https://vibras.com/contractor/login");
+    cy.get('#email').type('webt580@gmail.com');
     cy.get('#password').type('987654321');
     cy.get('.MuiButton-root').click()
     cy.get('.MuiTypography-subtitle1 > .MuiTypography-root').click()

@@ -18,7 +18,7 @@ describe('TestSuites ', function () {
     //    })
 
     it('Navigations', function(){
-        cy.visit("https://vibras.com/"); // visit URL 
+        cy.visit("https://vibras.com/contractor/login"); // visit URL 
         cy.get('#email').type('webt580@gmail.com'); // Valid credentials 
         cy.get('#password').type('987654321');
         cy.get('.MuiButton-root').click() 
@@ -36,6 +36,8 @@ describe('TestSuites ', function () {
         cy.get(':nth-child(11) > .MuiButtonBase-root').click()  
         cy.get(':nth-child(12) > .MuiButtonBase-root').click()
         //cy.get('.bottom-setting > .MuiButtonBase-root').click()
+        cy.get(':nth-child(15) > .MuiButtonBase-root').click()
+        cy.get(':nth-child(16) > .MuiButtonBase-root').click()
         
 
 
