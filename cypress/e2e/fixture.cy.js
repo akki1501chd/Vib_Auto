@@ -14,6 +14,7 @@ describe('My Test', () => {
         cy.get('.MuiButton-root').click(); 
   
         // Continue with your test... 
+       
 
       });
 

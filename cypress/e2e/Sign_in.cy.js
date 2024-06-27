@@ -8,6 +8,9 @@ describe('TestSuites', function () {
   //for (let i = 1; i <= runs; i++) {
   //it(`Run ${i}: visit URL`, function () {
   it('Visit URL LogIn with Invalid credentials', function () {
+    //const attempts = 5; // Number of times to run the test
+
+    //for (let i = 0; i < attempts; i++) {
     cy.visit("https://vibras.com/contractor/login"); // visit URL 
     cy.title().should('eq', 'vibras'); // Verify Title 
     cy.get('#email').should('be.enabled').click().type('abc@gmail.com'); // Invalid credentials 
@@ -20,7 +23,7 @@ describe('TestSuites', function () {
   it('Registration', function () {
     cy.visit("https://vibras.com/contractor/login");
     cy.get('.MuiTypography-subtitle1 > a').click();
-    cy.get('.MuiGrid-root > .MuiButtonBase-root').click() //Click on Register Button without filling the details
+    //cy.get('.MuiGrid-root > .MuiButtonBase-root').click() //Click on Register Button without filling the details
     cy.get('#firstName').should('be.enabled').should('be.visible').type('Hello');  //First Name 
     cy.get('#lastName').should('be.enabled').should('be.visible').type('World');   //Last Name
     cy.get('#businessName').should('be.enabled').should('be.visible').type('Web Testing'); // Bussines Name 
@@ -44,6 +47,7 @@ describe('TestSuites', function () {
     cy.get('.MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
     //cy.get('#\:rf\:-option-0').click()
     
+    
 
     // //cy.get('.MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
     // cy.get('.MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
@@ -57,11 +61,12 @@ describe('TestSuites', function () {
   //it(`Run ${i}: visit URL`, function () {
 
   it('Valid Credentials', function () {
+        
     cy.visit("https://vibras.com/contractor/login"); // visit URL 
-    cy.get('#email').type('webt580@gmail.com'); // Valid credentials 
+    cy.get('#email').type('mitchel@yopmail.com'); // Valid credentials 
     cy.get('#password').type('987654321');
     cy.get('.MuiButton-root').click()
-    cy.get('#fc-dom-1').should('contain.text', 'April 2024')
+    cy.get('#fc-dom-1').should('contain.text', 'June 2024')
     cy.get('#fc-dom-1').should('have.length',1)
     
       
@@ -71,9 +76,9 @@ describe('TestSuites', function () {
 
   });
 
-  it.only('Logout', function () {
+  it('Logout', function () {
     cy.visit("https://vibras.com/contractor/login");
-    cy.get('#email').type('webt580@gmail.com');
+    cy.get('#email').type('mitchel@yopmail.com');
     cy.get('#password').type('987654321');
     cy.get('.MuiButton-root').click()
     cy.get('.MuiTypography-subtitle1 > .MuiTypography-root').click()
@@ -83,10 +88,11 @@ describe('TestSuites', function () {
 
   });
 
+
 });
 
 
-
+//
 
 
 
